@@ -1,12 +1,48 @@
-<script setup>
-import Header from "./HeaderView.vue"
-import Sidebar from "./SidebarView.vue"
-</script>
-
 <template>
   <div class="container">
-    <Header />
-    <Sidebar />
+    <div class="header layout">
+      <img
+        width="70px"
+        src="https://hcmut.edu.vn/img/nhanDienThuongHieu/01_logobachkhoasang.png"
+      />
+      <h1>SMART FARM PROJECT</h1>
+    </div>
+    <div class="sidebar layout" style="padding-top: 20px; overflow: hidden">
+      <nav>
+        <ul>
+          <li>
+            <a href="#">
+              <img src="../assets/img/icon home.png" />
+              Smart Farm
+            </a>
+          </li>
+          <li>
+            <a href="/history">
+              <img src="../assets/img/db1.png" />
+              History
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="../assets/img/mess.png" />
+              Message
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="../assets/img/device.png" />
+              Devices
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="../assets/img/setting.png" />
+              Settings
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
     <div class="value layout">
       <div class="value_col col_1">
         <h1>Temperature</h1>
@@ -570,7 +606,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 * {
   padding: 0;
   margin: 0;
@@ -603,7 +639,7 @@ body {
 
 /* ---------Thanh dau trang--------*/
 
-/* .header {
+.header {
   grid-area: header;
   color: blue;
   background-color: #70a1ff;
@@ -613,12 +649,12 @@ body {
 .header h1 {
   font-size: 30px;
   margin: auto;
-} */
+}
 
 /*-----------------------------------*/
 
 /*-------- Thanh menu ben trai------- */
-/* .sidebar {
+.sidebar {
   grid-area: sidebar;
   background-color: #09006f;
 }
@@ -656,7 +692,7 @@ body {
 .sidebar nav ul li a:hover {
   background-color: #2980b9;
   border-radius: 10px;
-} */
+}
 
 /*-----------------------------------*/
 
@@ -1041,4 +1077,3 @@ input:checked + .slider:before {
   margin-top: 15px;
 }
 </style>
-

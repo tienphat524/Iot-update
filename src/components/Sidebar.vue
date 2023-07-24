@@ -3,7 +3,7 @@
       <nav>
         <ul>
           <li>
-            <a href="#">
+            <a href="homenew">
               <img src="../assets/img/icon home.png" />
               Smart Farm
             </a>
@@ -34,6 +34,7 @@
           </li>
         </ul>
       </nav>
+    </div>
 </template>
 
 <script>
