@@ -14,6 +14,11 @@
 </template>
 
 <style scoped>
+    div {
+        color: blue;
+        background-color: #70a1ff;
+        display: flex;
+    }
     .left {
         float: left;
     }
