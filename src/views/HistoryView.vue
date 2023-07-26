@@ -108,6 +108,7 @@
     grid-area: query;
     /* color: blue; */
     /* background-color: #70a1ff; */
+    width: 100%;
     display: flex;
   }
 
@@ -118,6 +119,7 @@
     grid-area: history;
     /* color: blue; */
     /* background-color: #70a1ff; */
+    width: 100%;
     display: flex;
   }
 

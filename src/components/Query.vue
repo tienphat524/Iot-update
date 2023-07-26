@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="query-container">
         <h1>Filter</h1>
-        <form class="query-container">
+        <form class="query-option">
             <label>Type</label>
             <select v-model="selectedOption" @change="handleSelectChange">
                 <option v-for="option in options" :key="option.value" :value="option.value">
@@ -46,7 +46,10 @@
 </script>
 
 <style scoped>
-   * {
+   .query-container {
+    width: 100%;
     color: black;
+    background-color: #e7d5ff;
+    border-radius: 50px;
    }
 </style>
