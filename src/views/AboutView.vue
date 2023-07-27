@@ -1,13 +1,16 @@
 <script setup>
-  import Query from '../components/Query.vue'
+  
 </script>
 
 <template>
   <div>
-    <Query />
+    <p class="test">aaa</p>
   </div>
 </template>
 
 <style scoped>
-
+  div {
+    width: 100%;
+    background-color: aqua;
+  }
 </style>

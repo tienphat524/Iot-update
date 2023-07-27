@@ -1,15 +1,15 @@
 <template>
-  <div>
+  <div class="table-content">
     <table class="table">
-      <tr>
-        <th>ID</th>
-        <th>Value</th>
-        <th>Timestamp</th>
+      <tr class="table-head">
+        <td class="th-id">ID</td>
+        <td class="th-value">Value</td>
+        <td class="th-timestamp">Timestamp</td>
       </tr>
-      <tr v-for="collectionName in collectionNames" >
-        <td>{{ collectionName.id }}</td>
-        <td>{{ collectionName.value }}</td>
-        <td>{{ collectionName.timestamp }}</td>
+      <tr class="table-body" v-for="collectionName in collectionNames" >
+        <td class="th-id">{{ collectionName.id }}</td>
+        <td class="th-value">{{ collectionName.value }}</td>
+        <td class="th-timestamp">{{ collectionName.timestamp }}</td>
       </tr>
     </table>
   </div>
@@ -165,14 +165,40 @@
   };
 </script>
 
-<style scoped>
-  * {
-    color: black;
+<style>
+  .table-content {
+    background-color: #f5f1fa;
+    height: 100%;
+    width: 100%;
   }
 
-  table {
-    background-color: aqua;
-    overflow: scroll;
+  .table {
+    width: 100%;
+    padding: 5px;
+    border-collapse: collapse;
+    border: 1px solid #dfdde2;
+  }
+
+  tr {
+    border: 1px solid #dfdde2;
+  }
+
+  .table-head {
+    background-color: #e3deea;
+    height: 35px;
+  }
+
+  .table-body {
+    height: 40px;
+  }
+
+  .th-id {
+    width: 30%;
+    padding-left: 20px;
+  }
+
+  .th-value, .th-timestamp {
+    width: 35%;
   }
 </style>
   

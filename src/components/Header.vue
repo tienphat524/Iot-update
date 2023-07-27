@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div>
+    <div class="header-content">
         <img
         class="left"
         width="70px"
@@ -13,8 +13,8 @@
     </div>
 </template>
 
-<style scoped>
-    div {
+<style>
+    .header-content {
         color: blue;
         background-color: #70a1ff;
         display: flex;
@@ -23,7 +23,7 @@
         float: left;
     }
 
-    h1 {
+    .header-content h1 {
         font-size: 30px;
         margin: auto;
     }

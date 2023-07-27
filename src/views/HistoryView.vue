@@ -15,7 +15,6 @@
 
     <div class="history">
       <History :receivedData="dataToSend"/>
-      <!-- <h1 style="color: black;">{{ selectedOption }}</h1> -->
     </div>
 
     <div class="footer">
@@ -60,19 +59,25 @@
 
 <style scoped>
 
+  * {
+    /* padding: 0;
+    margin: 0; */
+    font-family: Merriweather;
+    font-size: 16px;
+  }
   .container {
     display: grid;
-    width: 100%;
-    height: 100%;
+    /* width: 100%; */
+    /* height: 100%; */
     grid-template-columns: 100px 1fr;
-    grid-template-rows: 50px 100px 1fr 1fr 50px;
+    grid-template-rows: 50px 100px 1fr 50px;
     grid-template-areas:
       "header header"
       "sidebar query "
       "sidebar history"
-      "sidebar history"
       "sidebar footer";
     
+    grid-gap: 0;
     background-color: white;
   }
 
@@ -90,7 +95,6 @@
   
   .sidebar {
     grid-area: sidebar;
-    position: relative;
   }
 
   /*-----------------------------------*/
@@ -108,7 +112,8 @@
     grid-area: query;
     /* color: blue; */
     /* background-color: #70a1ff; */
-    width: 100%;
+    width: 90%;
+    margin: auto;
     display: flex;
   }
 
@@ -119,8 +124,11 @@
     grid-area: history;
     /* color: blue; */
     /* background-color: #70a1ff; */
-    width: 100%;
+    width: 90%;
+    margin: 0 auto 0 auto;
     display: flex;
+    border: 1px solid #dfdde2;
+    border-radius: 5px;
   }
 
   /*-----------------------------------*/
