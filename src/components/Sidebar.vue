@@ -2,7 +2,7 @@
     <div class="sidebar-content">
       <nav>
         <ul>
-          <li>
+          <li class="li-home">
             <a href="home">
               <img src="../assets/img/icon home.png" />
               Smart Farm
@@ -26,7 +26,7 @@
               Devices
             </a>
           </li>
-          <li>
+          <li class="li-setting">
             <a href="#">
               <img src="../assets/img/setting.png" />
               Settings
@@ -52,6 +52,7 @@
         /* overflow: hidden; */
         background-color: #09006f;
         height: 100%;
+        box-sizing: border-box;
     }
 
     .sidebar-content nav {
@@ -87,5 +88,13 @@
     .sidebar-content nav ul li a:hover {
         background-color: #2980b9;
         border-radius: 10px;
+    }
+
+    /* .sidebar-content nav ul li.li-home {
+
+    } */
+
+    .sidebar-content nav ul li.li-setting {
+      margin-bottom: 0;
     }
 </style>

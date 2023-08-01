@@ -53,6 +53,7 @@
         border-radius: 20px;
         padding: 10px;
         padding-left: 20px;
+        box-sizing: border-box;
    }
 
    .query-option {

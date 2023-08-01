@@ -170,11 +170,12 @@
     background-color: #f5f1fa;
     height: 100%;
     width: 100%;
+    box-sizing: border-box;
   }
 
   .table {
     width: 100%;
-    padding: 5px;
+    padding: 5px 5px 0 5px;
     border-collapse: collapse;
     border: 1px solid #dfdde2;
   }
@@ -190,14 +191,19 @@
 
   .table-body {
     height: 40px;
+    background-color: #f5f1fa;
   }
 
   .th-id {
-    width: 30%;
-    padding-left: 20px;
+    width: 40%;
+    padding-left: 30px;
   }
 
-  .th-value, .th-timestamp {
+  .th-value {
+    width: 25%;
+  }
+
+  .th-timestamp {
     width: 35%;
   }
 </style>

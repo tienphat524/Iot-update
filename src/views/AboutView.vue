@@ -1,16 +1,15 @@
 <script setup>
-  
+  import Footer from '../components/Footer.vue'
 </script>
 
 <template>
   <div>
-    <p class="test">aaa</p>
+    <Footer />
   </div>
 </template>
 
 <style scoped>
   div {
-    width: 100%;
-    background-color: aqua;
+    height: 50px;
   }
 </style>

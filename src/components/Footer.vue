@@ -5,15 +5,17 @@
 </template>
 
 <style>
-    .footer-content {
+    div.footer-content {
         font-size: 8px;
-        text-align: center;
-        justify-items: center;
         background-color: #70a1ff;
-        color: white;
+        box-sizing: border-box;
     }
 
     .footer-content h1 {
-        margin-top: 15px;
+        margin: auto;
+        text-align: center;
+        justify-items: center;
+        color: white;
+      
     }
 </style>

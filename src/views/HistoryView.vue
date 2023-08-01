@@ -64,11 +64,11 @@
     margin: 0; */
     font-family: Merriweather;
     font-size: 16px;
+    height: 100%;
   }
+
   .container {
     display: grid;
-    /* width: 100%; */
-    /* height: 100%; */
     grid-template-columns: 100px 1fr;
     grid-template-rows: 50px 100px 1fr 50px;
     grid-template-areas:
@@ -78,6 +78,7 @@
       "sidebar footer";
     
     grid-gap: 0;
+    min-height: 100vh;
     background-color: white;
   }
 
@@ -85,7 +86,6 @@
 
   .header {
     grid-area: header;
-    position: relative;
     width: 100%;
   }
 
@@ -102,7 +102,6 @@
   /* ---------Thanh cuoi trang--------*/
   .footer {
     grid-area: footer;
-    position: relative;
   }
 
   /*-----------------------------------*/
@@ -113,8 +112,8 @@
     /* color: blue; */
     /* background-color: #70a1ff; */
     width: 90%;
-    margin: auto;
-    display: flex;
+    
+    margin: 10px auto 0 auto;
   }
 
   /*-----------------------------------*/
@@ -125,8 +124,7 @@
     /* color: blue; */
     /* background-color: #70a1ff; */
     width: 90%;
-    margin: 0 auto 0 auto;
-    display: flex;
+    margin: 20px auto 0 auto;
     border: 1px solid #dfdde2;
     border-radius: 5px;
   }
