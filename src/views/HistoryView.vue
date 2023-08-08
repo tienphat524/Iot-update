@@ -43,7 +43,7 @@
 
     data() {
       return {
-        clear: null,
+        clear: false,
         collectionToSend: null,
         dateToSend: null,
         orderToSend: null
@@ -52,7 +52,7 @@
 
     methods: {
       handleClear() {
-        this.clear = true;
+        this.clear = (this.clear == true ? false : true);
       },
 
       handleCollectionSelected(collection) {

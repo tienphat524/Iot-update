@@ -2,7 +2,7 @@
     <form class="query-container">
         <div class="query-exec">
             <h1 class="exec">Query</h1>
-            <button class="exec button" @click="handleClear">Clear</button>
+            <button class="exec button" type="button" @click="handleClear">Clear</button>
         </div>
         <div class="query-option">
             <label class="label type">Type</label>
@@ -43,13 +43,16 @@
                     { value: "Pump1", label: "Pump 1" },
                     { value: "Pump2", label: "Pump 2" },
                     { value: "LightSensor", label: "Light Sensor" },
-                ],
+                ]
             };
         },
 
         methods: {
             handleClear() {
                 this.$emit('clear', true);
+                this.selectedCollection = null;
+                this.selectedDate = null;
+                this.selectedOrder = null;
             },
             
             handleSelectChange() {

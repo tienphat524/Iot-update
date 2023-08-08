@@ -63,9 +63,9 @@
               const collectionNames = [];
               querySnapshot.forEach(doc => {
                 var date = doc.data().timestap.toDate()
-                var timestamp = (date.getDate() < 10? ('0' + date.getDate()) : date.getDate())+
+                var timestamp = date.getFullYear()+
                                   "/"+((date.getMonth()+1) < 10? ('0' + (date.getMonth()+1)) : (date.getMonth()+1))+
-                                  "/"+date.getFullYear()+
+                                  "/"+(date.getDate() < 10? ('0' + date.getDate()) : date.getDate())+
                                   " "+(date.getHours() < 10? ('0' + date.getHours()) : date.getHours())+
                                   ":"+(date.getMinutes() < 10? ('0' + date.getMinutes()) : date.getMinutes())+
                                   ":"+(date.getSeconds() < 10? ('0' + date.getSeconds()) : date.getSeconds());
@@ -85,9 +85,9 @@
               const collectionNames = [];
               querySnapshot.forEach(doc => {
                 var date = doc.data().timestap.toDate()
-                var timestamp = (date.getDate() < 10? ('0' + date.getDate()) : date.getDate())+
+                var timestamp = date.getFullYear()+
                                   "/"+((date.getMonth()+1) < 10? ('0' + (date.getMonth()+1)) : (date.getMonth()+1))+
-                                  "/"+date.getFullYear()+
+                                  "/"+(date.getDate() < 10? ('0' + date.getDate()) : date.getDate())+
                                   " "+(date.getHours() < 10? ('0' + date.getHours()) : date.getHours())+
                                   ":"+(date.getMinutes() < 10? ('0' + date.getMinutes()) : date.getMinutes())+
                                   ":"+(date.getSeconds() < 10? ('0' + date.getSeconds()) : date.getSeconds());
@@ -107,9 +107,9 @@
               const collectionNames = [];
               querySnapshot.forEach(doc => {
                 var date = doc.data().timestap.toDate()
-                var timestamp = (date.getDate() < 10? ('0' + date.getDate()) : date.getDate())+
+                var timestamp = date.getFullYear()+
                                   "/"+((date.getMonth()+1) < 10? ('0' + (date.getMonth()+1)) : (date.getMonth()+1))+
-                                  "/"+date.getFullYear()+
+                                  "/"+(date.getDate() < 10? ('0' + date.getDate()) : date.getDate())+
                                   " "+(date.getHours() < 10? ('0' + date.getHours()) : date.getHours())+
                                   ":"+(date.getMinutes() < 10? ('0' + date.getMinutes()) : date.getMinutes())+
                                   ":"+(date.getSeconds() < 10? ('0' + date.getSeconds()) : date.getSeconds());
@@ -129,9 +129,9 @@
               const collectionNames = [];
               querySnapshot.forEach(doc => {
                 var date = doc.data().timestap.toDate()
-                var timestamp = (date.getDate() < 10? ('0' + date.getDate()) : date.getDate())+
+                var timestamp = date.getFullYear()+
                                   "/"+((date.getMonth()+1) < 10? ('0' + (date.getMonth()+1)) : (date.getMonth()+1))+
-                                  "/"+date.getFullYear()+
+                                  "/"+(date.getDate() < 10? ('0' + date.getDate()) : date.getDate())+
                                   " "+(date.getHours() < 10? ('0' + date.getHours()) : date.getHours())+
                                   ":"+(date.getMinutes() < 10? ('0' + date.getMinutes()) : date.getMinutes())+
                                   ":"+(date.getSeconds() < 10? ('0' + date.getSeconds()) : date.getSeconds());
@@ -151,9 +151,9 @@
               const collectionNames = [];
               querySnapshot.forEach(doc => {
                 var date = doc.data().timestap.toDate()
-                var timestamp = (date.getDate() < 10? ('0' + date.getDate()) : date.getDate())+
+                var timestamp = date.getFullYear()+
                                   "/"+((date.getMonth()+1) < 10? ('0' + (date.getMonth()+1)) : (date.getMonth()+1))+
-                                  "/"+date.getFullYear()+
+                                  "/"+(date.getDate() < 10? ('0' + date.getDate()) : date.getDate())+
                                   " "+(date.getHours() < 10? ('0' + date.getHours()) : date.getHours())+
                                   ":"+(date.getMinutes() < 10? ('0' + date.getMinutes()) : date.getMinutes())+
                                   ":"+(date.getSeconds() < 10? ('0' + date.getSeconds()) : date.getSeconds());
@@ -173,9 +173,9 @@
               const collectionNames = [];
               querySnapshot.forEach(doc => {
                 var date = doc.data().timestamp.toDate()
-                var timestamp = (date.getDate() < 10? ('0' + date.getDate()) : date.getDate())+
+                var timestamp = date.getFullYear()+
                                   "/"+((date.getMonth()+1) < 10? ('0' + (date.getMonth()+1)) : (date.getMonth()+1))+
-                                  "/"+date.getFullYear()+
+                                  "/"+(date.getDate() < 10? ('0' + date.getDate()) : date.getDate())+
                                   " "+(date.getHours() < 10? ('0' + date.getHours()) : date.getHours())+
                                   ":"+(date.getMinutes() < 10? ('0' + date.getMinutes()) : date.getMinutes())+
                                   ":"+(date.getSeconds() < 10? ('0' + date.getSeconds()) : date.getSeconds());
@@ -192,7 +192,7 @@
 
       handleReceivedDate(date) {
         var formatDateArray = date.split('-');
-        var formatDate = formatDateArray[2] + '/' + formatDateArray[1] + '/' + formatDateArray[0];
+        var formatDate = formatDateArray[0] + '/' + formatDateArray[1] + '/' + formatDateArray[2];
 
         this.collectionNames = this.originCollection.filter((t) => t.timestamp.includes(formatDate));
       },
