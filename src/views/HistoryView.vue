@@ -10,11 +10,11 @@
     </div>
 
     <div class="query">
-      <Query @option-selected="handleOptionSelected"/>
+      <Query @clear="handleClear" @collection-selected="handleCollectionSelected" @date-selected="handleDateSelected" @order-selected="handleOrderSelected"/>
     </div>
 
     <div class="history">
-      <History :receivedData="dataToSend"/>
+      <History :clear="clear" :receivedCollection="collectionToSend" :receivedDate="dateToSend" :receivedOrder="orderToSend"/>
     </div>
 
     <div class="footer">
@@ -43,16 +43,29 @@
 
     data() {
       return {
-        selectedOption: null,
-        dataToSend: null,
+        clear: null,
+        collectionToSend: null,
+        dateToSend: null,
+        orderToSend: null
       };
     },
 
     methods: {
-      handleOptionSelected(option) {
-        this.selectedOption = option;
-        this.dataToSend = option;
+      handleClear() {
+        this.clear = true;
       },
+
+      handleCollectionSelected(collection) {
+        this.collectionToSend = collection;
+      },
+
+      handleDateSelected(date) {
+        this.dateToSend = date;
+      },
+
+      handleOrderSelected(order) {
+        this.orderToSend = order;
+      }
     },
   }
 </script>
@@ -124,6 +137,7 @@
     /* color: blue; */
     /* background-color: #70a1ff; */
     width: 90%;
+    height: 93%;
     margin: 20px auto 0 auto;
     border: 1px solid #dfdde2;
     border-radius: 5px;

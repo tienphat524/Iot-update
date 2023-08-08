@@ -1,15 +1,13 @@
 <script setup>
-  import Footer from '../components/Footer.vue'
+  import Test from '../components/test_.vue'
 </script>
 
 <template>
   <div>
-    <Footer />
+    <Test />
   </div>
 </template>
 
 <style scoped>
-  div {
-    height: 50px;
-  }
+  
 </style>

@@ -20,21 +20,43 @@
   import 'firebase/firestore';
   
   export default {
-    props: ['receivedData'],
+    props: {
+      clear: Boolean,
+      receivedCollection: String,
+      receivedDate: String,
+      receivedOrder: String
+    },
     data() {
       return {
+        originCollection: [],
         collectionNames: [],
       };
     },
     watch: {
-      receivedData(newData, oldData) {
-        this.handleNewData(newData);
+      clear(newClear, oldClear) {
+        this.handleClear(newClear);
       },
+
+      receivedCollection(newCollection, oldCollection) {
+        this.handleReceivedCollection(newCollection);
+      },
+
+      receivedDate(newDate, oldDate) {
+        this.handleReceivedDate(newDate);
+      },
+
+      receivedOrder(newOrder, oldOrder) {
+        this.handleReceivedOrder(newOrder);
+      }
     },
     methods: {
-      handleNewData(newData) {
+      handleClear(clear) {
+        this.collectionNames = null;
+      },
+
+      handleReceivedCollection(collection) {
       // Access the Firestore collection and get the data
-        if (newData == 'Mode') {
+        if (collection == 'Mode') {
           firebase.firestore().collection('Mode').get()
           .then(querySnapshot => {
               // Transform the query snapshot to an array of objects
@@ -50,12 +72,13 @@
                 collectionNames.push({ id: doc.id, value: doc.data().buttonStatus5, timestamp: timestamp });
               });
               this.collectionNames = collectionNames;
+              this.originCollection = collectionNames;
           })
           .catch(error => {
               console.error('Error getting documents: ', error);
           });
         }
-        else if (newData == 'Fan') {
+        else if (collection == 'Fan') {
           firebase.firestore().collection('Fan').get()
           .then(querySnapshot => {
               // Transform the query snapshot to an array of objects
@@ -71,12 +94,13 @@
                 collectionNames.push({ id: doc.id, value: doc.data().buttonStatus3, timestamp: timestamp });
               });
               this.collectionNames = collectionNames;
+              this.originCollection = collectionNames;
           })
           .catch(error => {
               console.error('Error getting documents: ', error);
           });
         }
-        else if (newData == 'Motor') {
+        else if (collection == 'Motor') {
           firebase.firestore().collection('Motor').get()
           .then(querySnapshot => {
               // Transform the query snapshot to an array of objects
@@ -92,12 +116,13 @@
                 collectionNames.push({ id: doc.id, value: doc.data().buttonStatus4, timestamp: timestamp });
               });
               this.collectionNames = collectionNames;
+              this.originCollection = collectionNames;
           })
           .catch(error => {
               console.error('Error getting documents: ', error);
           });
         }
-        else if (newData == 'Pump1') {
+        else if (collection == 'Pump1') {
           firebase.firestore().collection('Pump1').get()
           .then(querySnapshot => {
               // Transform the query snapshot to an array of objects
@@ -113,12 +138,13 @@
                 collectionNames.push({ id: doc.id, value: doc.data().buttonStatus1, timestamp: timestamp });
               });
               this.collectionNames = collectionNames;
+              this.originCollection = collectionNames;
           })
           .catch(error => {
               console.error('Error getting documents: ', error);
           });
         }
-        else if (newData == 'Pump2') {
+        else if (collection == 'Pump2') {
           firebase.firestore().collection('Pump2').get()
           .then(querySnapshot => {
               // Transform the query snapshot to an array of objects
@@ -134,12 +160,13 @@
                 collectionNames.push({ id: doc.id, value: doc.data().buttonStatus2, timestamp: timestamp });
               });
               this.collectionNames = collectionNames;
+              this.originCollection = collectionNames;
           })
           .catch(error => {
               console.error('Error getting documents: ', error);
           });
         }
-        else if (newData == 'LightSensor') {
+        else if (collection == 'LightSensor') {
           firebase.firestore().collection('LightSensor').get()
           .then(querySnapshot => {
               // Transform the query snapshot to an array of objects
@@ -155,11 +182,26 @@
                 collectionNames.push({ id: doc.id, value: doc.data().value, timestamp: timestamp });
               });
               this.collectionNames = collectionNames;
+              this.originCollection = collectionNames;
           })
           .catch(error => {
               console.error('Error getting documents: ', error);
           });
         }
+      },
+
+      handleReceivedDate(date) {
+        var formatDateArray = date.split('-');
+        var formatDate = formatDateArray[2] + '/' + formatDateArray[1] + '/' + formatDateArray[0];
+
+        this.collectionNames = this.originCollection.filter((t) => t.timestamp.includes(formatDate));
+      },
+
+      handleReceivedOrder(order) {
+        if (order == 'asc')
+          this.collectionNames = this.collectionNames.sort((a, b) => a.timestamp.localeCompare(b.timestamp));
+        else if (order == 'desc')
+          this.collectionNames = this.collectionNames.sort((a, b) => b.timestamp.localeCompare(a.timestamp));
       },
     },
   };

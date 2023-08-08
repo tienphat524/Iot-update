@@ -16,6 +16,6 @@
         text-align: center;
         justify-items: center;
         color: white;
-      
+        padding-top: 17px;
     }
 </style>

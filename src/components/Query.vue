@@ -1,32 +1,42 @@
 <template>
-    <div class="query-container">
-        <h1>Query</h1>
-        <form class="query-option">
+    <form class="query-container">
+        <div class="query-exec">
+            <h1 class="exec">Query</h1>
+            <button class="exec button" @click="handleClear">Clear</button>
+        </div>
+        <div class="query-option">
             <label class="label type">Type</label>
-            <select v-model="selectedOption" @change="handleSelectChange" class="type option">
-                <option v-for="option in options" :key="option.value" :value="option.value">
-                    {{ option.label }}
+            <select class="type option" v-model="selectedCollection" @change="handleSelectChange">
+                <option v-for="collection in collections" :key="collection.value" :value="collection.value">
+                    {{ collection.label }}
                 </option>
             </select>
             <label class="label date">Date</label>
-            <input type="date" class="date option" />
+            <input type="date" class="date option" v-model="selectedDate" @change="handleDateChange" />
             <!-- <label>Time</label>
             <input type="time" /> -->
             <label class="label order">Order</label>
-            <select class="order option">
-                <option>Ascending</option>
-                <option>Descending</option>
+            <select class="order option" v-model="selectedOrder" @change="handleOrderChange">
+                <option v-for="order in orders" :key="order.value" :value="order.value">
+                    {{ order.label }}
+                </option>
             </select>
-        </form>
-    </div>
+        </div>
+    </form>
 </template>
 
 <script>
     export default {
         data() {
             return {
-                selectedOption: null,
-                options: [
+                selectedCollection: null,
+                selectedDate: null,
+                selectedOrder: null,
+                orders: [
+                    { value: "asc", label: "Ascending"},
+                    { value: "desc", label: "Descending"},
+                ],
+                collections: [
                     { value: "Mode", label: "Mode" },
                     { value: "Fan", label: "Fan" },
                     { value: "Motor", label: "Motor" },
@@ -38,9 +48,24 @@
         },
 
         methods: {
-            handleSelectChange() {
-                this.$emit('option-selected', this.selectedOption);
+            handleClear() {
+                this.$emit('clear', true);
             },
+            
+            handleSelectChange() {
+                this.$emit('collection-selected', this.selectedCollection);
+                this.selectedDate = null;
+                this.selectedOrder = null;
+            },
+
+            handleDateChange() {
+                this.$emit('date-selected', this.selectedDate);
+                this.selectedOrder = null;
+            },
+
+            handleOrderChange() {
+                this.$emit('order-selected', this.selectedOrder);
+            }
         },
     }
 </script>
@@ -52,17 +77,46 @@
         background-color: #e7d5ff;
         border-radius: 20px;
         padding: 10px;
-        padding-left: 20px;
+        padding-left: 5%;
         box-sizing: border-box;
    }
 
+   .query-exec {
+        display: block;
+        position: relative;
+   }
+
+   .exec {
+        display: inline-block;
+        margin-right: 10px;
+   }
+
+   .button {
+        /* justify-self: right; */
+        /* float: right; */
+        position: absolute;
+        right: 10%;
+        bottom: 0;
+        background-color: #BEF3F8;
+
+        font-size: 16px;
+        padding: 8px 25px 8px 25px;
+        border-radius: 10px;
+        border: none;
+
+   }
+
+   .button:hover {
+        background-color: #B5EBF0;
+   }
+
    .query-option {
-        padding-top: 10px;
-        
+        padding-top: 10px;   
    }
 
    .label {
-        padding: 0 10px 0 10px;
+        padding: 0 15px 0 15px;
+        font-size: 18px;
    }
 
    .type {
@@ -71,5 +125,14 @@
 
    .option {
         border-radius: 4px;
+        width: 200px;
+   }
+
+   .label.date {
+        margin-left: 40px;
+   }
+
+   .label.order {
+        margin-left: 40px;
    }
 </style>
