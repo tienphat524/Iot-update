@@ -4,6 +4,7 @@ import Home from '../views/HomeView.vue'
 import History from '../views/HistoryView.vue'
 import Home_New from '../views/HomeView_New.vue'
 import About from '../views/AboutView.vue'
+import Upload from '../views/UploadView.vue'
 
 Vue.use(VueRouter)
 
@@ -24,6 +25,11 @@ const router = new VueRouter({
       // which is lazy-loaded when the route is visited.
       // component: () => import('../views/AboutView.vue')
       component: About,
+    },
+    {
+      path: '/upload',
+      name: 'upload',
+      component: Upload,
     },
     {
       path: '/home',
