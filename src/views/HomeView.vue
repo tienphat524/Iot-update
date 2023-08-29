@@ -18,26 +18,26 @@
           </li>
           <li>
             <a href="/history">
-              <img src="../assets/img/db1.png" />
+              <img src="../assets/img/history.png" />
               History
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="../assets/img/mess.png" />
-              Message
+              <img src="../assets/img/disease-prevention.png" />
+              Diagnose
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="../assets/img/device.png" />
-              Devices
+              <img src="../assets/img/weather.png" />
+              Weather
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="../assets/img/setting.png" />
-              Settings
+              <img src="../assets/img/help-web-button.png" />
+              Help
             </a>
           </li>
         </ul>
