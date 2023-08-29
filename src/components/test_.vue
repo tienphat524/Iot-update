@@ -17,6 +17,12 @@
       onDateChange() {
         // The selectedDate will automatically be updated due to v-model
         console.log('Selected Date:', this.selectedDate);
+
+
+
+
+
+        
       },
     },
   };
