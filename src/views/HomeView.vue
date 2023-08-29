@@ -88,6 +88,28 @@
           </div>
         </div>
       </div>
+      <div class="status_col s_1">
+        <div>
+          <h1>Pump 1</h1>
+          <h2 v-if="buttonStatus1" style="font-weight: 700; color: #00ac47;">Pump 1 is ON !!! </h2>
+          <h2 v-if="!buttonStatus1" style="font-weight: 700; color: red;">Pump 1 is OFF !!!</h2>
+        </div>
+        <div class="stt">
+          <img src="../assets/img/pump.png" />
+          <div class="btn">
+            <span class="text">OFF</span>
+            <label class="switch">
+              <input
+                v-model="buttonStatus1"
+                v-on:click="toggleButton1()"
+                type="checkbox"
+              />
+              <span class="slider round"></span>
+            </label>
+            <span class="text">ON</span>
+          </div>
+        </div>
+      </div>
       <div class="status_col s_2">
         <div>
           <h1>Pump 2</h1>
@@ -790,6 +812,8 @@ body {
   grid-template-rows: repeat(2, 1fr);
   width: 900px;
   grid-gap: 20px;
+
+  overflow: scroll;
 }
 
 .status_col {

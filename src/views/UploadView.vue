@@ -9,10 +9,10 @@
         </div>
 
         <div class="upload-content">
-            <input type="file" accept="image/*" @change="onChange" />
-            <div id="preview">
+            <div class="preview">
                 <img v-if="item.imageUrl" :src="item.imageUrl" />
             </div>
+            <input type="file" accept="image/*" @change="onChange" />
         </div>
 
         <div class="footer">
@@ -67,7 +67,6 @@
         grid-template-rows: 50px 100px 1fr 50px;
         grid-template-areas:
         "header header"
-        "sidebar upload-content "
         "sidebar upload-content"
         "sidebar footer";
         
@@ -86,5 +85,19 @@
 
     .footer {
         grid-area: footer;
+    }
+
+    .upload-content {
+        grid-area: upload-content;
+    }
+
+    .preview {
+        height: 20%;
+        width: 20%;
+        margin: auto;
+    }
+
+    .preview img {
+        /* margin: auto; */
     }
 </style>
